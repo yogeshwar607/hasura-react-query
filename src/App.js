@@ -1,4 +1,4 @@
-import { useEffect } from 'React'
+import { useEffect } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import { useUpdateUserData } from './react-query/mutations/user'

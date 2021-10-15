@@ -1,6 +1,6 @@
 import graphQLRequest from '../service'
 
-async function insertUser({ email, name }) {
+async function updateUserProfile({ email, name }) {
   try {
     const query = `
         mutation addUser($email:String!,$name:String!,) {
@@ -20,4 +20,4 @@ async function insertUser({ email, name }) {
   }
 }
 
-export { insertUser }
+export { updateUserProfile }

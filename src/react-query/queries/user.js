@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import { userData } from 'graphql/queries'
+import { userData } from '../../hasura-graphql/queries/user'
 
 async function userProfile(email) {
   const data = await userData({ email })
@@ -7,14 +7,14 @@ async function userProfile(email) {
 }
 
 function useUserData() {
-  return useQuery(['userData'], userProfile, {
+  return useQuery([ 'userData' ], userProfile, {
     initialData: {
       name: 'test_user',
-      email: 'test@test.com',
+      email: 'test@test.com'
     },
     initialStale: true,
     refetchOnMount: true,
-    refetchOnWindowFocus: false,
+    refetchOnWindowFocus: false
   })
 }
 

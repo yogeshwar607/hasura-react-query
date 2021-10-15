@@ -1,5 +1,5 @@
 import { useMutation } from 'react-query'
-import { updateUserProfile } from 'graphql/mutations'
+import { updateUserProfile } from '../../hasura-graphql/mutations/user'
 
 const useUpdateUserData = () =>
   useMutation(
