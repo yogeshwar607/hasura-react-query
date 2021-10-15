@@ -7,7 +7,9 @@ const useUpdateUserData = () =>
       return await updateUserProfile(data)
     },
     {
-      onMutate: (editedValue) => { },
+      onMutate: (editedValue) => {
+        // console.log(data, error, editedValue)
+      },
 
       onError: (error, editedValue) => {
         console.log(error, editedValue)

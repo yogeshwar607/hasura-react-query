@@ -2,18 +2,17 @@ import fetch from 'node-fetch'
 
 const hgeEndpoint = process.env.REACT_APP_HGE_ENDPOINT
 
-async function requestGQL({ query, variables }) {
+async function graphQLRequest({ query, variables }) {
   try {
-
     const headers = {
       'Content-Type': 'application/json',
-      'X-Hasura-Role': 'public',
+      'X-Hasura-Role': 'public'
     }
 
     const response = await fetch(hgeEndpoint, {
       method: 'POST',
       body: JSON.stringify({ query, variables }),
-      headers: headers,
+      headers: headers
     })
 
     const jsonResponse = await response.json()
@@ -27,4 +26,4 @@ async function requestGQL({ query, variables }) {
   }
 }
 
-export default requestGQL
+export default graphQLRequest

@@ -1,4 +1,4 @@
-import requestGQL from '../service'
+import graphQLRequest from '../service'
 
 async function insertUser({ email, name }) {
   try {
@@ -13,14 +13,11 @@ async function insertUser({ email, name }) {
       }`
 
     const qv = { email: email, name: name }
-    const data = await requestGQL({ query, variables: qv })
+    const data = await graphQLRequest({ query, variables: qv })
     return data
-
   } catch (error) {
     throw error
   }
 }
 
-export {
-  insertUser
-}
+export { insertUser }
